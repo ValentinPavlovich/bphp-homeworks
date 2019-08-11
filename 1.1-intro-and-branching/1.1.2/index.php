@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Moscow');
 $variable = date("H");
 if($variable >= 6 && $variable < 11){
     $day = 'Доброе утро!';
@@ -29,7 +30,7 @@ switch (date("N")) :
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>bPHP - 1.1.1</title>
+    <title>bPHP - 1.1.2</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
