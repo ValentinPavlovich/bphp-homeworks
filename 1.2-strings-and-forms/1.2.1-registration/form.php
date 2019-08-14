@@ -2,15 +2,15 @@
 $login = $_POST['login'];
 $password = $_POST['password'];
 $email = $_POST['email'];
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$middleName = $_POST['middleName'];
+$firstName = trim($_POST['firstName']);
+$lastName = trim($_POST['lastName']);
+$middleName = trim($_POST['middleName']);
 $code = $_POST['code'];
 $codeWord = 'nd82jaake';
 $value = 0;
 
-if (preg_match('/\W/', $login)) {
-    echo 'Поле логин не должно содержать символы @/*?,;: <br>';
+if (preg_match('/[@#$%^&*()\/*?,;:]/', $login)) {
+    echo 'Поле логин не должно содержать символы [@#$%^&*()\/*?,;:] <br>';
     $value = 1;
 } 
 if (strlen($password) < 8) {
