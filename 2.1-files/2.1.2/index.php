@@ -30,9 +30,9 @@
             } 
             $tmp = $_FILES['picture']['tmp_name'];
             $name = basename($_FILES['picture']['name']);
-            if (exif_imagetype($tmp) === IMAGETYPE_JPEG | 
-            exif_imagetype($tmp) === IMAGETYPE_BMP | 
-            exif_imagetype($tmp) === IMAGETYPE_PNG | 
+            if (exif_imagetype($tmp) === IMAGETYPE_JPEG || 
+            exif_imagetype($tmp) === IMAGETYPE_BMP || 
+            exif_imagetype($tmp) === IMAGETYPE_PNG || 
             exif_imagetype($tmp) === IMAGETYPE_GIF) {
                 move_uploaded_file($tmp, "$dir/$name");
                 $files = array_diff(scandir($dir), array('.', '..'));                
