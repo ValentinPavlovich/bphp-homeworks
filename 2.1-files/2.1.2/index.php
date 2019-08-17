@@ -7,10 +7,7 @@
     input {
 		display: block;
 		margin-top: 10px;
-	}
-	button {
-		margin-top: 10px;
-	}
+	}	
   </style>
 </head>
 <body>
@@ -22,26 +19,28 @@
 </form>
 
 <div>
-    <?php        
+<?php        
         if ($_SERVER['REQUEST_METHOD']=='POST') {
             $dir = 'img/';
             if(!is_dir($dir)) {                
                 mkdir($dir);
-            } 
-            $tmp = $_FILES['picture']['tmp_name'];
-            $name = basename($_FILES['picture']['name']);
-            if (exif_imagetype($tmp) === IMAGETYPE_JPEG || 
-            exif_imagetype($tmp) === IMAGETYPE_BMP || 
-            exif_imagetype($tmp) === IMAGETYPE_PNG || 
-            exif_imagetype($tmp) === IMAGETYPE_GIF) {
-                move_uploaded_file($tmp, "$dir/$name");
-                $files = array_diff(scandir($dir), array('.', '..'));                
-                foreach($files as $key => $value) {                    
-                    echo '<div>';                    
-                    echo "<img src='$dir$files[$key]' alt='' />";
-                    echo '</div>';
-                }
             }
+            $valid_types =  array("gif","jpg", "png", "jpeg", "bmp");
+            $ext = substr($_FILES['picture']['name'], 1 + strrpos($_FILES['picture']['name'], "."));
+
+            if (in_array($ext, $valid_types) && move_uploaded_file($_FILES['picture']['tmp_name'], $dir . 
+              $_FILES['picture']['name'])) {
+                  echo 'File is valid, and was successfully uploaded.';
+            } else {
+                  echo 'There some errors!';
+            } 
+            
+            $files = array_diff(scandir($dir), array('.', '..'));                
+            foreach($files as $key => $value) {                    
+                echo '<div>';                    
+                echo "<img src='$dir$files[$key]' alt='' />";
+                echo '</div>';
+            }  
         }
     ?>
 </div>
