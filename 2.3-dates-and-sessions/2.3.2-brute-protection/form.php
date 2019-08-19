@@ -73,8 +73,8 @@ function bruteForce($users) {
                 return false;
             }
  
-        // Прошло больше минуты
-        } elseif ((time() - $_SESSION['time']) > 60) {
+        // Прошло больше минуты        
+        } else {
             $_SESSION = [];
             check($users);
             return;

@@ -28,11 +28,7 @@
      * @return bool
      */
     function shouldBeIncremented(): bool
-    {  
-        if (!isset($_COOKIE['time'])) {
-            setcookie('time', time());                    
-        }
-        
+    { 
         $startTime = time();
         $timeStamp = $_COOKIE['time'];
 
