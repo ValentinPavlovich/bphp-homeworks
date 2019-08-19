@@ -28,11 +28,25 @@
      * @return bool
      */
     function shouldBeIncremented(): bool
-    {
-        //write your code here
+    {  
+        if (!isset($_COOKIE['time'])) {
+            setcookie('time', time());                    
+        }
+        
+        $startTime = time();
+        $timeStamp = $_COOKIE['time'];
+
+        if ($startTime - $timeStamp >= 300) {
+            incrementViews(getViews());            
+            setcookie('time', time());
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    //
+    // 
+    shouldBeIncremented(); 
 ?>
 
 <!DOCTYPE html>
