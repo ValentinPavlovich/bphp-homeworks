@@ -13,9 +13,8 @@
         return $arr;
     }
 
-    function reserve($map, $row, $place) {
-        if ($map[$row - 1][$place - 1] === false) {
-            global $map; 
+    function reserve(&$map, $row, $place) {
+        if ($map[$row - 1][$place - 1] === false) {             
             $map[$row - 1][$place - 1] = true;
             return true;
         }

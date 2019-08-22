@@ -15,20 +15,15 @@
 
     function reserve($map, $requiredPlaces) {
         for ($i=0; $i<count($map); $i++) {
-
-            $value = $requiredPlaces;
             for ($j=0; $j<count($map[$i]); $j++) {
-                if (($j + $value) > (count($map[$i]))) {
+                if (($j + $requiredPlaces) > (count($map[$i]))) {
                     return false;
                 }
-                if ($map[$i][$j] === false) {
-                    $value--;
-                    if ($value === 0) {
+                if ($map[$i][$j] === false) {                    
+                    $requiredPlaces--;
+                    if ($requiredPlaces === 0) {
                         return 'Найдены лучшие места: c '.($j-$requiredPlaces+2).' по '.($j+1).' в ряду '.($i+1);
                     }
-                }
-                else {
-                    $value = $requiredPlaces;
                 }
             }
         }    
