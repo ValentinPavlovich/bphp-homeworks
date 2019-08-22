@@ -28,13 +28,9 @@
      * @return bool
      */
     function shouldBeIncremented(): bool
-    { 
-        if (!isset($_COOKIE['time'])) {
-            $timeStamp = 0;                    
-        }
-
-        $startTime = time();
-        $timeStamp = $_COOKIE['time'];
+    {   
+        $startTime = time(); 
+        $timeStamp = isset($_COOKIE['time']) ? $_COOKIE['time'] : 0;
 
         if ($startTime - $timeStamp >= 300) {
             incrementViews(getViews());            
