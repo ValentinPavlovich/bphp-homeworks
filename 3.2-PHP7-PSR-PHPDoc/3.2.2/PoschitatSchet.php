@@ -35,7 +35,7 @@ function poschitatSchet(array $menu, array $post)
                                 $v->name
                             </div>
                             <div>
-                                $value * $cost ₽ = $sumFormat ₽
+                                $value * $cost руб. = $sumFormat руб.
                             </div>
                         </div>";
             $amount += $sum;
@@ -50,7 +50,7 @@ function poschitatSchet(array $menu, array $post)
                                 Скидка 10% (самовывоз)
                             </div>
                             <div>
-                                - $send ₽
+                                - $send руб.
                             </div>
                         </div>";
             $amount = $amount - (float)$send;
@@ -61,7 +61,7 @@ function poschitatSchet(array $menu, array $post)
                                 Чаевые 10%
                             </div>
                             <div>
-                                $send ₽
+                                $send руб.
                             </div>
                         </div>";
             $amount = $amount + (float)$send;
@@ -72,7 +72,7 @@ function poschitatSchet(array $menu, array $post)
                                 Доставка
                             </div>
                             <div>
-                                200.00 ₽
+                                200.00 руб.
                             </div>
                         </div>";
             $amount = $amount + 200;
@@ -85,7 +85,7 @@ function poschitatSchet(array $menu, array $post)
     $amount = number_format($amount, NUMBER_OF_DECIMAL_PLACES);
     $purchase .= "<div class=\"order322-total\">
                     <div>
-                        Итого: $amount ₽
+                        Итого: $amount руб.
                     </div>
                 </div>";
     return $purchase;

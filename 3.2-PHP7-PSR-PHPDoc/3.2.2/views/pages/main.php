@@ -25,7 +25,7 @@ $menu = $data['menu'];
                     . '</div>'
                     . '<div class="col-2 text-right">✕ '
                     . number_format($menuItem->price, 2)
-                    . ' ₽</div>'
+                    . ' руб.</div>'
                     . '</div>';
             }
             ?>
@@ -35,7 +35,7 @@ $menu = $data['menu'];
                 <div class="col-10 offset-1">
                     <div class="form-group">
                         <input name="service" type="radio" id="service_1" value="1">
-                        <label for="service_1">Доставка (200.00 ₽)</label>
+                        <label for="service_1">Доставка (200.00 руб.)</label>
                     </div>
                     <div class="form-group">
                         <input name="service" type="radio" id="service_2" value="2">
