@@ -1,34 +1,30 @@
 <?php
 class Person
 {
-  public $name;
-  public $surName;
-  public $patronymic;
-  public $gender;
-  const GENDER_MALE = 1;
-  const GENDER_FEMALE = -1;
-  const GENDER_UNDEFINED = 0;
-  public function __construct(string $name, string $surName, string $patronymic = null) 
+    public $name;
+    public $surName;
+    public $patronymic;
+    public $gender;
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = -1;
+    const GENDER_UNDEFINED = 0;
+    public function __construct(string $name, string $surName, string $patronymic = null) 
   {
     $this->name = $name; 
     $this->surName = $surName;
     if ($patronymic != null) {
-      $this->patronymic = $patronymic;
+        $this->patronymic = $patronymic;
     }
     $patronymicEnding = mb_substr($patronymic, -3);
-    if (
-      $patronymicEnding == 'вич'
-      || $patronymicEnding == 'ьич'
-      || $patronymicEnding == 'тич'
-      || $patronymicEnding == 'глы'
-      ) {
+    if ($patronymicEnding == 'вич'
+        || $patronymicEnding == 'ьич'
+        || $patronymicEnding == 'тич'
+        || $patronymicEnding == 'глы') {
         $this->gender = self::GENDER_MALE;
-    } elseif (
-      $patronymicEnding == 'вна'
-      || $patronymicEnding == 'чна'
-      || $patronymicEnding == 'шна'
-      || $patronymicEnding == 'ызы'
-      ) {
+    } elseif ($patronymicEnding == 'вна'
+        || $patronymicEnding == 'чна'
+        || $patronymicEnding == 'шна'
+        || $patronymicEnding == 'ызы') {
         $this->gender = self::GENDER_FEMALE; 
     } else {
         $this->gender = self::GENDER_UNDEFINED;
@@ -36,31 +32,31 @@ class Person
   }
   public function getFIO() 
   {
-    return $this->surName . ' ' . $this->name . ' ' . $this->patronymic . ' ';
+      return $this->surName . ' ' . $this->name . ' ' . $this->patronymic . ' ';
   }
   public function getGender() 
   {
     if ($this->gender === 1) {
-      return 'male';
+        return 'male';
     }
     if ($this->gender === 0) {
-      return 'undefined';
+        return 'undefined';
     }
     if ($this->gender === -1) {
-      return 'female';
+        return 'female';
     }
   }
   
   public function getGenderSymbol() 
   {
     if($this->gender === 1) {
-      return "\u{2642}";
+        return "\u{2642}";
     }
     if($this->gender === 0) {
-      return "\u{1F60E}";
+        return "\u{1F60E}";
     }
     if($this->gender === -1) {
-      return "\u{2640}";
+        return "\u{2640}";
     }
   }
 }

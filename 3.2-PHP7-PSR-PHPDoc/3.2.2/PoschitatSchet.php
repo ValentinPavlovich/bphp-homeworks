@@ -1,12 +1,12 @@
 <?php
 /**
- * function for Payment
+ * function for payment
  *
  * @param int $amount
  * @return float $send
  */
 const NUMBER_OF_DECIMAL_PLACES = 2;
-function Payment(int $amount) {
+function payment(int $amount) {
     $send = number_format($amount * 0.10, NUMBER_OF_DECIMAL_PLACES);
     return $send;
 }
@@ -17,7 +17,7 @@ function Payment(int $amount) {
  * @param array $post
  * @return string $purchase
  */
-function PoschitatSchet(array $menu, array $post)
+function poschitatSchet(array $menu, array $post)
 {
     $accountNumber = random_int(1000, 9999);
     $purchase = "<div class=\"order322-line order322-title\">
@@ -44,7 +44,7 @@ function PoschitatSchet(array $menu, array $post)
     $service = (int)$post['service'];
     if ($amount > 0) {
         if ($service === 2) {
-            $send = Payment($amount);
+            $send = payment($amount);
             $purchase .= "<div class=\"order322-line\">
                             <div>
                                 Скидка 10% (самовывоз)
@@ -55,7 +55,7 @@ function PoschitatSchet(array $menu, array $post)
                         </div>";
             $amount = $amount - (float)$send;
         } elseif ($service === 4) {
-            $send = Payment($amount);
+            $send = payment($amount);
             $purchase .= "<div class=\"order322-line\">
                             <div>
                                 Чаевые 10%
@@ -66,7 +66,7 @@ function PoschitatSchet(array $menu, array $post)
                         </div>";
             $amount = $amount + (float)$send;
         } elseif ($service === 1) {
-            $send = Payment($amount);
+            $send = payment($amount);
             $purchase .= "<div class=\"order322-line\">
                             <div>
                                 Доставка
