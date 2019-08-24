@@ -14,16 +14,24 @@
     }    
 
     function reserve($map, $requiredPlaces) {
-        for ($i=0; $i<count($map); $i++) {
+
+        for ($i=0; $i<count($map); $i++) {            
+            $value = $requiredPlaces;
+
             for ($j=0; $j<count($map[$i]); $j++) {
-                if (($j + $requiredPlaces) > (count($map[$i]))) {
+                if (($j + $value) > (count($map[$i]))) {
                     return false;
                 }
-                if ($map[$i][$j] === false) {                    
-                    $requiredPlaces--;
-                    if ($requiredPlaces === 0) {
-                        return 'Найдены лучшие места: c '.($j-$requiredPlaces+2).' по '.($j+1).' в ряду '.($i+1);
+                if ($map[$i][$j] === false) {
+                    $value--;
+                    if ($value === 0) {
+                        return 'Найдены лучшие места: c '.($j-$requiredPlaces + 2).' по '.($j + 1).' в ряду '.($i + 1);
                     }
+                }
+                elseif (map[$i][$j] === true && (($j + $value) > $requiredPlaces)) {
+                    $value = $requiredPlaces;                    
+                } else {
+                    $j = count($map[$i]) - 1;
                 }
             }
         }    
@@ -31,10 +39,10 @@
     }
 
     $chairs = 50;
-    $map = generate(5, 8, $chairs);
-    $map[2][0] = true;
-    $map[6][3] = true;
-    $requiredPlaces = 6;
+    $map = generate(2, 7, $chairs);
+    $map[1][6] = true;
+    $map[2][3] = true;
+    $requiredPlaces = 5;
     
     echo reserve($map, $requiredPlaces);
 
