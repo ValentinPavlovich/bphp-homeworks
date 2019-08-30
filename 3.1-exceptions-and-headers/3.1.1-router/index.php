@@ -30,10 +30,11 @@ class NotFound extends Exception{}
     }
     catch (BadRequest $e) {
         echo $e->getMessage() . '<br/>';
-        header('Location: error.php', true, 400);
+        header('Location: error.php', 400);
     }
     catch (NotFound $e) {
         echo $e->getMessage() . '<br/>';
-        header('Location: 404.php', true, 404);       
-    }   
+        header('Location: 404.php', 404);       
+    }  
+
 ?>
