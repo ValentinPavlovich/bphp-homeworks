@@ -1,0 +1,14 @@
+[
+    {
+        "name": "user1",
+        "projectsInProgress": 1
+    },
+    {
+        "name": "user2",
+        "projectsInProgress": 1
+    },
+    {
+        "name": "user3",
+        "projectsInProgress": 1
+    }
+]

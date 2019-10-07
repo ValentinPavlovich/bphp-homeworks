@@ -1,0 +1,95 @@
+{
+    "dataTitle": {
+        "last_guid": 4
+    },
+    "dataArray": {
+        "project1": {
+            "translator": "user1",
+            "client": "TRUMP",
+            "original": "Русский",
+            "translate": [
+                "RU",
+                "EN",
+                "DE",
+                "FR",
+                "IT",
+                "ESP"
+            ],
+            "text": "Зарегистрировал хостинг и домен, привязал домен к хостингу — заплатил 0 р. Теперь можно загрузить проект через фтп-клиент или онлайн менеджер файлов и отправить ссылку клиенту. Как видите, можно бесплатно зарегистрировать хостинг и домен для своих проектов и сэкономить деньги, не теряя в функционале. Такой вариант подойдёт для лендингов, сайтов-визиток или личных блогов. ",
+            "text_translate": {
+                "RU": "Зарегистрировал хостинг и домен, привязал домен к хостингу — заплатил 0 р. Теперь можно загрузить проект через фтп-клиент или онлайн менеджер файлов и отправить ссылку клиенту.\r\nКак видите, можно бесплатно зарегистрировать хостинг и домен для своих проектов и сэкономить деньги, не теряя в функционале. Такой вариант подойдёт для лендингов, сайтов-визиток или личных блогов.",
+                "EN": "Registered hosting and domain, tied domain to hosting - paid 0 p. Now you can download the project via FTP client or online file manager and send the link to the client. As you can see, you can register for free hosting and domain for your projects and save money without losing functionality. This option is suitable for landing pages, business card sites or personal blogs.",
+                "DE": "Registriertes Hosting und Domain, Domain an Hosting gebunden - bezahlt 0 p. Jetzt können Sie das Projekt über den FTP-Client oder den Online-Dateimanager herunterladen und den Link an den Client senden. Wie Sie sehen, können Sie sich für das kostenlose Hosting und die Domain für Ihre Projekte registrieren und Geld sparen, ohne die Funktionalität zu verlieren. Diese Option eignet sich für Zielseiten, Visitenkarten-Websites oder persönliche Blogs.",
+                "FR": "Hébergement et domaine enregistrés, domaine lié à hébergement - payant 0 p. Vous pouvez maintenant télécharger le projet via un client FTP ou un gestionnaire de fichiers en ligne et envoyer le lien au client. Comme vous pouvez le constater, vous pouvez vous inscrire gratuitement pour l'hébergement et le domaine de vos projets et économiser de l'argent sans perdre de fonctionnalité. Cette option convient aux pages de destination, aux sites de cartes de visite ou aux blogs personnels.",
+                "IT": "Hosting e dominio registrati, dominio collegato all'hosting - pagato 0 p. Ora è possibile scaricare il progetto tramite client FTP o file manager online e inviare il collegamento al client. Come puoi vedere, puoi registrarti per l'hosting e il dominio gratuiti per i tuoi progetti e risparmiare denaro senza perdere funzionalità. Questa opzione è adatta per landing page, siti di biglietti da visita o blog personali.",
+                "ESP": "Alojamiento y dominio registrados, dominio vinculado al alojamiento - pago 0 p. Ahora puede descargar el proyecto a través del cliente FTP o el administrador de archivos en línea y enviar el enlace al cliente. Como puede ver, puede registrarse para obtener alojamiento y dominio gratuitos para sus proyectos y ahorrar dinero sin perder la funcionalidad. Esta opción es adecuada para páginas de destino, sitios de tarjetas de visita o blogs personales."
+            },
+            "date": "2019-10-31",
+            "status": "done",
+            "guid": null
+        },
+        "project2": {
+            "translator": "user2",
+            "client": "Мама анархия",
+            "original": "Итальянский",
+            "translate": [
+                "RU",
+                "EN"
+            ],
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "text_translate": {
+                "RU": "Lorem ipsum — классическая панграмма, условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы. Является искажённым отрывком из философского трактата Марка Туллия Цицерона «О пределах добра и зла», написанного в 45 году до н. э. на латинском языке, обнаружение сходства атрибутируется Ричарду МакКлинтоку[1]. Распространился в 1970-х годах из-за трафаретов компании Letraset, a затем — из-за того, что служил семплом в программе PageMaker. Испорченный текст, вероятно, происходит от его издания в Loeb Classical Library 1914 года, в котором слово dolorem разбито переносом так, что страница 36 начинается с lorem ipsum…",
+                "EN": "In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available, but it may also be used to temporarily replace copy in a process called greeking, which allows designers to consider form without the meaning of the text influencing the design. Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a first-century BCE text by Cicero, with words altered, added, and removed to make it nonsensical, improper Latin.",
+                "DE": "",
+                "FR": "",
+                "IT": "",
+                "ESP": ""
+            },
+            "date": "2019-10-28",
+            "status": "rejected",
+            "guid": null
+        },
+        "project3": {
+            "translator": "user3",
+            "client": "ООО Роман и Юля",
+            "original": "Английский",
+            "translate": [
+                "RU",
+                "DE",
+                "ESP"
+            ],
+            "text": "In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available, but it may also be used to temporarily replace copy in a process called greeking, which allows designers to consider form without the meaning of the text influencing the design. Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a first-century BCE text by Cicero, with words altered, added, and removed to make it nonsensical, improper Latin.",
+            "text_translate": {
+                "RU": "Lorem ipsum — классическая панграмма, условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы. Является искажённым отрывком из философского трактата Марка Туллия Цицерона «О пределах добра и зла», написанного в 45 году до н. э. на латинском языке, обнаружение сходства атрибутируется Ричарду МакКлинтоку[1]. Распространился в 1970-х годах из-за трафаретов компании Letraset, a затем — из-за того, что служил семплом в программе PageMaker. Испорченный текст, вероятно, происходит от его издания в Loeb Classical Library 1914 года, в котором слово dolorem разбито переносом так, что страница 36 начинается с lorem ipsum…",
+                "EN": "",
+                "DE": "Lorem ipsum - ein klassischer Pangram, ein bedingter, oft bedeutungsloser Platzhaltertext, der in das Seitenlayout eingefügt wird. Es ist eine verzerrte Passage aus der philosophischen Abhandlung von Mark Tullius Cicero",
+                "FR": "",
+                "IT": "",
+                "ESP": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.\r\nAunque no posee actualmente fuentes para justificar sus hipótesis, el profesor de filología clásica Richard McClintock asegura que su uso se remonta a los impresores de comienzos del siglo XVI.1​ Su uso en algunos editores de texto muy conocidos en la actualidad ha dado al texto lorem ipsum nueva popularidad."
+            },
+            "date": "2019-10-25",
+            "status": "resolved",
+            "guid": null
+        },
+        "project4": {
+            "translator": "user1",
+            "client": "TRUMP NOT",
+            "original": "Английский",
+            "translate": [
+                "RU"
+            ],
+            "text": "Like the systematic position, the early history of the Japanese language is a highly controversial issue. Proponents of the version of the Altai origin of the Japanese language attribute its formation to the period after the conquest of the Japanese islands by Altai people - immigrants from the Asian continent, whose language was influenced by the autochthons-Austro-Asians (closest to the related aborigines of Taiwan).",
+            "text_translate": {
+                "RU": "Как и систематическое положение, ранняя история японского языка — крайне спорный вопрос. Сторонники версии об алтайском происхождении японского языка относят его формирование к периоду после завоевания Японских островов алтайцами — выходцами с азиатского континента, язык которых испытал влияние автохтонов-австроазиатов (ближе всего родственным аборигенам Тайваня).",
+                "EN": "",
+                "DE": "",
+                "FR": "",
+                "IT": "",
+                "ESP": ""
+            },
+            "date": "2019-10-27",
+            "status": "new_translator",
+            "guid": null
+        }
+    }
+}
