@@ -18,7 +18,7 @@ class Projects extends JsonDataArray {
         $guids = $data->getGuids();
 
         $this->filter = (isset($_GET['filterParam'])) ? $_GET['filterParam'] : '';
-        $this->path = ($_COOKIE['login'] == 'admin') ? "form_manager.php" : "form_translator.php";   
+        $this->path = ($_SESSION['role'] == 'admin') ? "form_manager.php" : "form_translator.php"; 
         
         foreach ($projects as $index => $obj) {   
             if(isset($obj->translate)) {               
@@ -29,9 +29,9 @@ class Projects extends JsonDataArray {
             if(isset($obj->text_translate->{$this->arr_lang[$i]})) {
                 $string[$i] = $obj->text_translate->{$this->arr_lang[$i]};
             }            
-        }            
-
-        if (($_COOKIE['login'] == 'admin') && (substr($obj->status, 0, 3) === substr($this->filter, 0, 3))  || ($_COOKIE['login'] == 'admin') && ($this->filter === '')) { 
+        } 
+            
+        if (($_SESSION['role'] == 'admin') && (substr($obj->status, 0, 3) === substr($this->filter, 0, 3))  || ($_SESSION['role'] == 'admin') && ($this->filter === '')) {
 
             echo "<div class=\"container__wrapper\">"
                 . '<div class="form__container">'

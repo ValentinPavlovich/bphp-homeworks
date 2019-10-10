@@ -1,5 +1,5 @@
 <?php
-include __DIR__.'/config.php'; 
+include __DIR__.'/auth.php'; 
 include 'pages/header.php';
 
 if(AUTH) { //если авторизирован 

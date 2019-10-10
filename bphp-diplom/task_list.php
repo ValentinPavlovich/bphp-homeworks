@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if ($_SESSION['authorized'] <> 1) {
+  header("Location: index.php");
+  exit;
+}
+
 include 'pages/header.php';
 include 'pages/menu.php';
 ?>
@@ -11,11 +18,10 @@ include 'pages/menu.php';
 
   $page = new Projects;
   $page->displayPage();
-
 ?>
 
 </div>
 
-<?php 
+<?php
 include 'pages/footer.php';
 ?>

@@ -1,44 +1,32 @@
 <?php
+session_start();
+
+if ($_SESSION['authorized'] <> 1) {
+    header("Location: index.php");
+    exit;
+  }
+
 include "pages/header.php";
 include "pages/menu.php";
 
 $arr_lang = array("RU", "EN", "DE", "FR", "IT", "ESP");
 
-if (isset($_POST['translator'])) {
-    $translator = $_POST['translator'];
-}
-if (isset($_POST['client'])) {
-    $client = $_POST['client'];
-}
-if (isset($_POST['original'])) {
-    $original = $_POST['original'];
-}
-if (isset($_POST['translate'])) {
-    $translate = $_POST['translate'];
-}
-if (isset($_POST['text'])) {
-    $text = $_POST['text'];
-}  
+    $translator = isset($_POST['translator']) ? $_POST['translator'] : '';
+    $client = isset($_POST['client']) ? $_POST['client'] : '';
+    $original = isset($_POST['original']) ? $_POST['original'] : '';
+    $translate = isset($_POST['translate']) ? $_POST['translate'] : '';
+    $text = isset($_POST['text']) ? $_POST['text'] : '';
 
-$arr_translate = explode(" ", $translate);
-
-for($i = 0; $i < count($arr_lang); $i++) {
+    $arr_translate = explode(" ", $translate);
+    for($i = 0; $i < count($arr_lang); $i++) {
         $key = $arr_lang[$i];
-       if(isset($_POST["text_translate"][$key])) {                                  
-                            $data_text[$i] = $_POST["text_translate"][$key];
-       }
-}
+        $data_text[$i] = isset($_POST["text_translate"][$key]) ? $_POST["text_translate"][$key] : '';
+    }
 
-if (isset($_POST['date'])) {
-    $date = $_POST['date'];
-}
-if (isset($_POST['status'])) {
-    $status = $_POST['status'];
-}  
-
-if (isset($_POST["form_to_translator"])) {
-    $guid = $_POST["form_to_translator"];
-    } 
+    $date = isset($_POST['date']) ? $_POST['date'] : '';
+    $status = isset($_POST['status']) ? $_POST['status'] : '';
+    $guid = isset($_POST['form_to_translator']) ? $_POST['form_to_translator'] : '';
+       
 ?>
 
 <div class="container__wrapper">

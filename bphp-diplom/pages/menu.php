@@ -1,3 +1,7 @@
+<!-- ?php
+session_start();
+?> -->
+
 <div class="stabiliser"></div>
 <div class="menu__wrapper">
     <div class="menu__container">
@@ -16,13 +20,15 @@
         </div>
         <div class="menu__item menu__btn">
             <a class="nav-link link" href="task_list.php?filterParam=done">Done</a>
-        </div>
+        </div>     
 
-    <?php if ($_COOKIE['login'] == 'admin') { ?>
+        <?php if ($_SESSION['role'] == 'admin') { ?>
         <div class="menu__item">
             <a class="nav-link link" href="form_manager.php">Create new</a>
         </div>
-    <?php } ?>
+        <?php } else { ?>
+            <a class="nav-link link" style="visibility: hidden;"></a>
+        <?php } ?>           
 
         <div class="menu__item"><a class="nav-link link" href="login.php?logout">Exit</a></div>
     </div>

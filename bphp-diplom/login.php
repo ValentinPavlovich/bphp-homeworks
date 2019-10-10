@@ -1,5 +1,5 @@
 <?php
-include __DIR__.'/config.php';
+include __DIR__.'/auth.php';
 
 if(!AUTH) {
   //не авторизован
@@ -13,9 +13,11 @@ if(!AUTH) {
 
           //пароль совпадает
           $_SESSION['user'] = $_POST['login'];
+          $_SESSION['role'] = $users[$_SESSION['user']]['role'];
+          $_SESSION['authorized'] = 1;          
 
-            setcookie('login', $_POST['login'], time() + 3600 * 24 * 365, '/');
-            setcookie('password', getPassword($users[$_POST['login']]['password']), time() + 3600 * 24 * 365, '/');          
+          setcookie('login', $_POST['login'], time() + 3600 * 24 * 365, '/');
+          setcookie('password', getPassword($users[$_POST['login']]['password']), time() + 3600 * 24 * 365, '/');          
       }
   }
   if(!isset($_SESSION['user']) || $_SESSION['user'] != $_POST['login']) {
@@ -29,6 +31,9 @@ if(!AUTH) {
 } else {
     if(isset($_GET['logout'])) { //выход из системы
         unset($_SESSION['user']);
+        unset($_SESSION['role']);
+        unset($_SESSION['authorized']);
+
         setcookie('login', '', time() - 3600 * 24 * 365, '/');
         setcookie('password', '', time() - 3600 * 24 * 365, '/');
     }

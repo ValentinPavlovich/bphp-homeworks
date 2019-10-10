@@ -15,6 +15,9 @@ $guid = NULL;
 if (isset($_POST['translator'])) {
     $translator = $_POST['translator'];
 }
+if (isset($_POST['status'])) {
+    $status = $_POST['status'];
+}
 if (isset($_GET['obj'])) {
     $guid = $_GET['obj'];
 }
@@ -22,8 +25,10 @@ if (isset($_GET['obj'])) {
 $del = new Project($translator, $client, $original, $translate, $text, $text_translate, $date, $status, $guid);
 $del->delFromForm();
 
-$del_translator = new Translators($translator);
-$del_translator->delCounter();
+if (substr($status, 0, 4) !== 'done') {
+    $del_translator = new Translators($translator);
+    $del_translator->delCounter();
+}
 
 header('HTTP/1.1 200 OK');
 header("Location:../task_list.php");
