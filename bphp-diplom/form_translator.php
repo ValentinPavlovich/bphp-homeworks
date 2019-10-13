@@ -117,9 +117,7 @@ echo "</div>
                 echo "<button class=\"button_save send\" type=\"submit\" name=\"status\" value=\""
                 . $status
                 . "\">Save</button>";
-            }    
-
-
+            } 
 echo "          
           </div>
         </div>

@@ -11,7 +11,6 @@ $text_translate = NULL;
 $date = NULL;
 $status = NULL;
 $guid = NULL;
-
 $replaced_translator = NULL;
 
 if (isset($_POST['translator'])) {

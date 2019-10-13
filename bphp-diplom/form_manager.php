@@ -14,7 +14,6 @@ include 'classes/JsonFileAccessModel.php';
 
 $arr_lang = array("RU", "EN", "DE", "FR", "IT", "ESP");
 $arr_original = array("Русский", "Английский", "Немецкий", "Французский", "Итальянский", "Испанский");
-
 $modelJson = new JsonFileAccessModel('translators');
 $translators = $modelJson->readJson();
 

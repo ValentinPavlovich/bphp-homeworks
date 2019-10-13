@@ -5,7 +5,6 @@ if (!isset($_SESSION['authorized'])) {
   header("Location: index.php");
   exit;
 }
-
 include 'pages/header.php';
 include 'pages/menu.php';
 ?>
