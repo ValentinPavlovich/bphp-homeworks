@@ -38,7 +38,6 @@ if (isset($_POST['date'])) {
 if (isset($_POST['status'])) {
     $status = $_POST['status'];
 }
-
 if (isset($_POST['guid'])) {
     $guid = $_POST['guid'];
 }

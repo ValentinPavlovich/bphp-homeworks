@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['authorized'] <> 1) {
+if (!isset($_SESSION['authorized'])) {
     header("Location: index.php");
     exit;
   }
