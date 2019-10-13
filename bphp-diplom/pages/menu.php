@@ -1,7 +1,3 @@
-<!-- ?php
-session_start();
-?> -->
-
 <div class="stabiliser"></div>
 <div class="menu__wrapper">
     <div class="menu__container">
