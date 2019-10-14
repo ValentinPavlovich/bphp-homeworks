@@ -2,44 +2,17 @@
 include '../autoload.php';
 include '../config/SystemConfig.php';
 
-$translator = NULL;
-$client = NULL;
-$original = NULL;
-$translate = NULL;
-$text = NULL;
-$text_translate = NULL;          
-$date = NULL;
-$status = NULL;
-$guid = NULL;
 $replaced_translator = NULL;
 
-if (isset($_POST['translator'])) {
-    $translator = $_POST['translator'];
-}
-if (isset($_POST['client'])) {
-    $client = $_POST['client'];
-}
-if (isset($_POST['original'])) {
-    $original = $_POST['original'];
-}
-if (isset($_POST['translate'])) {
-    $translate = $_POST['translate'];
-}
-if (isset($_POST['text'])) {
-    $text = $_POST['text'];
-}
-if (isset($_POST['text_translate'])) {
-    $text_translate = $_POST['text_translate'];
-}
-if (isset($_POST['date'])) {
-    $date = $_POST['date'];
-}
-if (isset($_POST['status'])) {
-    $status = $_POST['status'];
-}
-if (isset($_POST['guid'])) {
-    $guid = $_POST['guid'];
-}
+$translator = isset($_POST['translator']) ? $_POST['translator'] : null;
+$client = isset($_POST['client']) ? $_POST['client'] : null;
+$original = isset($_POST['original']) ? $_POST['original'] : null;
+$translate = isset($_POST['translate']) ? $_POST['translate'] : null;
+$text = isset($_POST['text']) ? $_POST['text'] : null;
+$text_translate = isset($_POST['text_translate']) ? $_POST['text_translate'] : null;
+$date = isset($_POST['date']) ? $_POST['date'] : null;
+$status = isset($_POST['status']) ? $_POST['status'] : null;
+$guid = isset($_POST['guid']) ? $_POST['guid'] : null;
 
 if (in_array(NULL, array($translator, $client, $original, $translate, $text, $text_translate, $date, $status))) {    
     header("Location:javascript://history.back()");

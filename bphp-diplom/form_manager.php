@@ -18,7 +18,6 @@ $modelJson = new JsonFileAccessModel('translators');
 $translators = $modelJson->readJson();
 
 if (!isset($_POST['form_to_manager'])) { ?>
-
 <div class="container__wrapper">
     <div class="form__container">
         <div class="button__wrapper close">

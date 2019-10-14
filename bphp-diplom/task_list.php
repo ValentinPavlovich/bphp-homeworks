@@ -5,6 +5,7 @@ if (!isset($_SESSION['authorized'])) {
   header("Location: index.php");
   exit;
 }
+
 include 'pages/header.php';
 include 'pages/menu.php';
 ?>
@@ -13,8 +14,7 @@ include 'pages/menu.php';
 
 <?php
   include 'autoload.php';  
-  include 'config/SystemConfig.php';  
-
+  include 'config/SystemConfig.php';
   $page = new Projects;
   $page->displayPage();
 ?>

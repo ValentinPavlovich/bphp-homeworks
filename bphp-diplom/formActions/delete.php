@@ -2,25 +2,16 @@
 include '../autoload.php';
 include '../config/SystemConfig.php';
 
-$translator = NULL;
 $client = NULL;
 $original = NULL;
 $translate = NULL;
 $text = NULL;
 $text_translate = NULL;          
 $date = NULL;
-$status = NULL;
-$guid = NULL;
 
-if (isset($_POST['translator'])) {
-    $translator = $_POST['translator'];
-}
-if (isset($_POST['status'])) {
-    $status = $_POST['status'];
-}
-if (isset($_GET['obj'])) {
-    $guid = $_GET['obj'];
-}
+$translator = isset($_POST['translator']) ? $_POST['translator'] : null;
+$status = isset($_POST['status']) ? $_POST['status'] : null;
+$guid = isset($_GET['obj']) ? $_GET['obj'] : null;
 
 $del = new Project($translator, $client, $original, $translate, $text, $text_translate, $date, $status, $guid);
 $del->delFromForm();
