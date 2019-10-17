@@ -16,12 +16,12 @@ if(!isset($_SESSION['user']) && isset($_COOKIE['login']) && isset($_COOKIE['pass
 
     //если нет сессии пользователя, но есть куки с пользовательским логином и паролем проходится аторизация
     $_SESSION['user'] = $_COOKIE['login'];
-    $_SESSION['role'] = $users[$_SESSION['user']]['role'];
-    $_SESSION['authorized'] = 1;    
+    $_SESSION['role'] = $users[$_SESSION['user']]['role'];       
 }
 
 define('AUTH', isset($_SESSION['user']) && isset($users[$_SESSION['user']])); //флаг аторизован или нет
 $user = AUTH ? $users[$_SESSION['user']] : null;
+$_SESSION['authorized'] = AUTH;
 
 $message = '';
 if(!empty($_SESSION['message'])) {

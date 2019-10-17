@@ -24,8 +24,8 @@ if (isset($arr->dataArray->$guid->translator)) {
     $replaced_translator = $arr->dataArray->$guid->translator;
 }   
 
-if (isset($replaced_translator) && $translator !== $replaced_translator && $status !== 'rejected_new') {
-    $replace = new Translators($translator, $replaced_translator);
+if (isset($replaced_translator) && $translator !== $replaced_translator && $status !== 'rejected_new' && substr($status, 0, 5) !== 'done_') {   
+    $replace = new Translators($translator, $replaced_translator);    
     $replace->changeCounter();
 }
     $add = new Project($translator, $client, $original, $translate, $text, $text_translate, $date, $status, $guid);    

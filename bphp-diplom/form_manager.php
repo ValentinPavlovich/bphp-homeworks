@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['authorized'])) {
+if (!isset($_SESSION['authorized']) || !($_SESSION['authorized']) || $_SESSION['role'] !== 'admin') {
     header("Location: index.php");
     exit;
-  }
+}
 
 include 'pages/header.php';
 include 'pages/menu.php';

@@ -13,8 +13,7 @@ if(!AUTH) {
 
           //пароль совпадает
           $_SESSION['user'] = $_POST['login'];
-          $_SESSION['role'] = $users[$_SESSION['user']]['role'];
-          $_SESSION['authorized'] = 1;          
+          $_SESSION['role'] = $users[$_SESSION['user']]['role'];                  
 
           setcookie('login', $_POST['login'], time() + 3600 * 24 * 365, '/');
           setcookie('password', getPassword($users[$_POST['login']]['password']), time() + 3600 * 24 * 365, '/');          

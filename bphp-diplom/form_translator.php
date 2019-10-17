@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['authorized'])) {
+if (!isset($_SESSION['authorized']) || !($_SESSION['authorized']) || $_SESSION['role'] !== 'translator') {
     header("Location: index.php");
     exit;
 }
