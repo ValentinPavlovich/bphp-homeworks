@@ -11,14 +11,29 @@ class Projects extends JsonDataArray {
         $this->path = $path;
     }
 
-    public function displayPage() {
-        // $data = $this->newQuery()->orderBy('date');
-        $data = $this->newQuery();
+    public function displayPage() { 
+        switch ($_SESSION['sort_by']) {
+            case 1:
+                $data = $this->newQuery()->orderBy('translator');
+                break;
+            case 2:
+                $data = $this->newQuery()->orderBy('client');
+                break;
+            case 3:
+                $data = $this->newQuery()->orderBy('date');
+                break;
+            case 4:
+                $data = $this->newQuery()->orderBy('original');
+                break;            
+            default:
+                $data = $this->newQuery();
+        }
+
         $projects = $data->getObjs();
         $guids = $data->getGuids();
 
-        $this->filter = (isset($_GET['filterParam'])) ? $_GET['filterParam'] : '';
-        $this->path = ($_SESSION['role'] == 'admin') ? "form_manager.php" : "form_translator.php"; 
+        $this->filter = isset($_GET['filterParam']) ? $_GET['filterParam'] : '';
+        $this->path = $_SESSION['role'] == 'admin' ? "form_manager.php" : "form_translator.php"; 
         
         foreach ($projects as $index => $obj) {   
             if(isset($obj->translate)) {               

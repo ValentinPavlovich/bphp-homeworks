@@ -5,6 +5,7 @@ if (!isset($_SESSION['authorized']) || !($_SESSION['authorized']) || $_SESSION['
     header("Location: index.php");
     exit;
 }
+$_SESSION['page'] = 'not_task';
 
 include "pages/header.php";
 include "pages/menu.php";

@@ -2,6 +2,14 @@
 <div class="menu__wrapper">
     <div class="menu__container">
 
+        <?php if ($_SESSION['role'] == 'admin' && $_SESSION['page'] !== 'not_task') { ?>
+        <div class="menu__item menu__btn">
+            <a class="nav-link link" href="sort_count.php">Sort</a>
+        </div>
+        <?php } else { ?>
+            <a class="nav-link link" style="visibility: hidden;"></a>
+        <?php } ?>  
+
         <div class="menu__item">
             <a class="nav-link link" href="task_list.php">All</a>
         </div>

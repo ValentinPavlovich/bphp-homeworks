@@ -22,4 +22,4 @@ if (substr($status, 0, 4) !== 'done') {
 }
 
 header('HTTP/1.1 200 OK');
-header("Location:../task_list.php");
+header("Location: ../task_list.php");

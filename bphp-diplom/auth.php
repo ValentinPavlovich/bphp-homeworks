@@ -1,5 +1,5 @@
 <?php
-header('Content-type: text/html;charset=utf-8');
+header('Content-type: text/html; charset=utf-8');
 session_start();
 
 //рандомная строка
@@ -16,7 +16,8 @@ if(!isset($_SESSION['user']) && isset($_COOKIE['login']) && isset($_COOKIE['pass
 
     //если нет сессии пользователя, но есть куки с пользовательским логином и паролем проходится аторизация
     $_SESSION['user'] = $_COOKIE['login'];
-    $_SESSION['role'] = $users[$_SESSION['user']]['role'];       
+    $_SESSION['role'] = $users[$_SESSION['user']]['role'];
+    $_SESSION['sort_by'] = 0;    
 }
 
 define('AUTH', isset($_SESSION['user']) && isset($users[$_SESSION['user']])); //флаг аторизован или нет

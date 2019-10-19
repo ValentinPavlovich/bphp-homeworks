@@ -5,6 +5,7 @@ if (!isset($_SESSION['authorized']) || !($_SESSION['authorized'])) {
   header("Location: index.php");
   exit;
 }
+$_SESSION['page'] = isset($_GET['filterParam']) ? $_GET['filterParam'] : '';
 
 include 'pages/header.php';
 include 'pages/menu.php';

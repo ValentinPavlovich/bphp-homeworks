@@ -3,6 +3,7 @@ include __DIR__.'/auth.php';
 include 'pages/header.php';
 
 if(AUTH) { //если авторизирован 
+    $_SESSION['page'] = 'not_task';
     include 'pages/menu.php';
 ?>
 
